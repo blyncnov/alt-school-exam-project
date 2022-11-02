@@ -95,7 +95,7 @@ const Profile = () => {
           <div className="profile-container">
             <p>Additional Information</p>
           </div>
-          {/* Additional Infomattion  */}
+          {/* Additional Infomattions  */}
           <div className="profile-container">
             <div className="stat-container">
               <div className="box">
