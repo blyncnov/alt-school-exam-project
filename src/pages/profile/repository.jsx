@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
 import axios from "axios";
 
+// utils
 import Pagination from "../../utils/Pagination";
 
+// Images
 import LoadingImage from "../../assets/loading.gif";
 
+// API Endpoint
 const repoUrl = " https://api.github.com/users/blyncnov/repos";
 
 const Repository = () => {
@@ -31,8 +33,6 @@ const Repository = () => {
     FetchGitHubData();
   }, []);
 
-  console.log(repository);
-
   return (
     <>
       {repository?.length !== 0 ? (
@@ -44,9 +44,9 @@ const Repository = () => {
             {ModifiedReposCount.map((repo, index) => {
               return (
                 <div className="repos-contents" key={repo.id}>
-                  <a href={repo.url}>
+                  <a href={`repos/${repo.name}`}>
                     <p>
-                      {index}. {repo.name}
+                      {index + 1}. {repo.name}
                     </p>
                   </a>
                 </div>

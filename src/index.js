@@ -13,15 +13,12 @@ import SingleRepository from "./pages/profile/singlerepos.jsx";
 // CSS
 import "./index.css";
 import "./style/overall.scss";
+import ErrorPage from "./pages/404";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const IndexPage = () => {
   const router = createBrowserRouter([
-    {
-      path: "*",
-      element: "",
-    },
     {
       path: "/",
       element: <Onboarding />,
@@ -35,8 +32,12 @@ const IndexPage = () => {
       element: <Repository />,
     },
     {
-      path: "/profile/repos/:repo",
+      path: "/profile/repos/:id",
       element: <SingleRepository />,
+    },
+    {
+      path: "*",
+      element: <ErrorPage />,
     },
   ]);
   return <RouterProvider router={router} />;
